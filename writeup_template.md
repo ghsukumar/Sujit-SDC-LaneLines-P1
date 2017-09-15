@@ -1,47 +1,39 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
 ---
 
 **Finding Lane Lines on the Road**
 
 The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
+* Make a pipeline that finds lane lines on the road first for static images.
+* Make a pipeline that finds lane lines on the road next for a video clip re-using code used to find lanes lines for the static images.
 
-
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
+Images are in the git repo under the test_images_output folder.  
+Generated videos are in the git repo under the test_videos_output folder.  
 
 ---
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Description of the pipeline.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My pipeline consisted of the following steps:
+* Read all the images
+* For each image, convert to gray scale
+* Using the provided helper (utility) methods, 
+* do gaussian blur,
+* get canny edges, 
+* determine area of interest by selecting the vertices of the polygon,
+* apply hough transform and get the lane lines from the images.
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+Images are in the git repo under the test_images_output folder.  
+Generated videos are in the git repo under the test_videos_output folder.  
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+### 2. Potential shortcomings with current pipeline
 
-![alt text][image1]
+Lane lines on the generated videos are not bright. It shows in a faint red. The process image callback returns a weighted image of the original image and an image with the lines on canny edges image.
 
+### 3. Possible improvements to the current pipeline
 
-### 2. Identify potential shortcomings with your current pipeline
-
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
-
-### 3. Suggest possible improvements to your pipeline
-
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+1) Work on playing with the weighted image params to show a darker line for the lane lines.  
+2) Some of the images don't have the lane lines marked all through. Need to improve the draw lines method.  
