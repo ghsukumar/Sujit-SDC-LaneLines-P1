@@ -27,7 +27,10 @@ My pipeline consisted of the following steps:
 * apply hough transform and get the lane lines from the images.
 
 Images are in the git repo under the test_images_output folder.  
+https://github.com/ghsukumar/Sujit-SDC-LaneLines-P1/tree/master/test_images_output  
+  
 Generated videos are in the git repo under the test_videos_output folder.  
+https://github.com/ghsukumar/Sujit-SDC-LaneLines-P1/tree/master/test_videos_output  
 
 ### 2. Potential shortcomings with current pipeline
 
